@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<title>ひよこ英会話 | 福岡市南区・春日市のおうち英会話教室</title>
+<meta name="description" content="福岡市南区・春日市のおうち英会話教室。3歳から高校生まで、ひとり一人のペースで「英語が好き」を育てます。子ども英会話講師歴24年・のべ37,000人。"/>
+<meta name="theme-color" content="#F0B83C"/>
+
+<!-- OGP for SNS sharing -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="ひよこ英会話 | 福岡市南区・春日市"/>
+<meta property="og:description" content="3歳から高校生まで通える、おうち英会話教室。歌・絵本・ゲームで楽しく、英検・受験対策まで一貫サポート。"/>
+<meta property="og:locale" content="ja_JP"/>
+<meta property="og:site_name" content="ひよこ英会話"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Klee+One:wght@400;600&family=Yusei+Magic&family=Kosugi+Maru&display=swap"/>
+
+<!-- Favicon: chick SVG inline -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23F0B83C'/%3E%3Cpath d='M48 14 Q50 8 52 14' stroke='%23F0B83C' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='38' cy='52' r='5' fill='%23F4C9B9' opacity='0.7'/%3E%3Ccircle cx='62' cy='52' r='5' fill='%23F4C9B9' opacity='0.7'/%3E%3Cellipse cx='42' cy='44' rx='3' ry='4' fill='%232b1f14'/%3E%3Cellipse cx='58' cy='44' rx='3' ry='4' fill='%232b1f14'/%3E%3Ccircle cx='43' cy='42.5' r='1' fill='white'/%3E%3Ccircle cx='59' cy='42.5' r='1' fill='white'/%3E%3Cpath d='M47 50 L50 56 L53 50 Z' fill='%23D49520'/%3E%3C/svg%3E"/>
+
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background: #FBF6E8;
+    color: #3D2E1F;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  * { box-sizing: border-box; }
+  /* Mobile-first: design is built at 420px wide. Center it on larger screens. */
+  #root {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #FBF6E8;
+    box-shadow: 0 0 40px rgba(122,90,58,0.08);
+    min-height: 100vh;
+  }
+  /* Loading splash while Babel transpiles */
+  .loading {
+    position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: #FBF6E8; color: #7A5A3A; font-family: 'Yusei Magic', sans-serif;
+    font-size: 22px; z-index: 99;
+  }
+  .loading.hidden { display: none; }
+  .loading::before {
+    content: '🐣'; font-size: 36px; margin-right: 10px;
+    animation: bounce 0.6s ease-in-out infinite alternate;
+  }
+  @keyframes bounce { from { transform: translateY(0) } to { transform: translateY(-8px) } }
+</style>
+</head>
+<body>
+
+<div class="loading" id="loading">ひよこ英会話</div>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script src="content.js"></script>
+<script type="text/babel" src="hiyoko.jsx"></script>
+<script type="text/babel" src="variant-storybook.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<VariantB showHiyoko={true}/>);
+  document.getElementById('loading')?.classList.add('hidden');
+</script>
+
+</body>
+</html>
